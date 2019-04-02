@@ -1,12 +1,18 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.quote_rv;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pursuit.nycmenagerie.R;
+
+
 public class QuoteViewHolder extends RecyclerView.ViewHolder {
+
+    public static final String TAG_FINGERPRINT = "Fingerprint";
 
     private TextView txt_quote;
     private TextView txt_author;
@@ -14,9 +20,9 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
 
     private OnQuoteFragmentInteraction listener;
 
-    public QuoteViewHolder(@NonNull View itemView) {
+    public QuoteViewHolder(@NonNull View itemView, OnQuoteFragmentInteraction listener) {
         super(itemView);
-
+        this.listener = listener;
         txt_quote = itemView.findViewById(R.id.txt_quote);
         txt_author = itemView.findViewById(R.id.txt_author);
         img_fingerprint = itemView.findViewById(R.id.img_fingerprint);
@@ -30,11 +36,11 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
         img_fingerprint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(listener != null){
+                Log.d(TAG_FINGERPRINT, "onClick: " + listener);
+                if (listener != null) {
                     listener.toVideoFragment();
                 }
             }
         });
-
     }
 }

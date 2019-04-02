@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.quote_rv;
 
 public class QuoteResponse {
 
@@ -14,16 +14,8 @@ public class QuoteResponse {
         return quote;
     }
 
-    public void setQuote(String quote) {
-        this.quote = quote;
-    }
-
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
 }

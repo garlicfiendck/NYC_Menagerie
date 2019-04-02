@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie.ui;
+package com.pursuit.nycmenagerie.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
