@@ -1,0 +1,111 @@
+package com.pursuit.nycmenagerie;
+
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static android.support.constraint.Constraints.TAG;
+
+public class QuoteFragment extends Fragment {
+
+    public static final String QUOTE_KEY = "quote";
+    public static final String AUTHOR_KEY = "author";
+
+    private String quote;
+    private String author;
+
+    private RecyclerView recyclerView;
+    private QuoteAdapter adapter;
+    private List<QuoteResponse> quoteList = new ArrayList<>();
+
+    private OnQuoteFragmentInteraction listener;
+
+    public static QuoteFragment newInstance(String quote, String author){
+        QuoteFragment quoteFragment = new QuoteFragment();
+        Bundle args = new Bundle();
+        args.putString(QUOTE_KEY, quote);
+        args.putString(AUTHOR_KEY, author);
+        quoteFragment.setArguments(args);
+        return quoteFragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof OnQuoteFragmentInteraction){
+            listener = (OnQuoteFragmentInteraction) context;
+        } else {
+            throw new RuntimeException(context.toString() + "must implement OnQuoteFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() != null){
+            quote = getArguments().getString(QUOTE_KEY);
+            author = getArguments().getString(AUTHOR_KEY);
+        }
+
+        ApiClient.getInstance().create(ApiService.class).getQuotes().enqueue(new Callback<Quotes>() {
+            @Override
+            public void onResponse(Call<Quotes> call, Response<Quotes> response) {
+                Log.d(TAG, "onResponse: " + response.body());
+                quoteList.addAll(response.body().getCivicQuotes());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<Quotes> call, Throwable t) {
+                Log.e(TAG, "onFailure: " + t.toString());
+
+            }
+        });
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_quote, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = view.findViewById(R.id.recyclerview_quote);
+        adapter = new QuoteAdapter(quoteList);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+}
