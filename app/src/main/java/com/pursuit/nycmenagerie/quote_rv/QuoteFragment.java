@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.quote_rv;
 
 
 import android.content.Context;
@@ -6,15 +6,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.pursuit.nycmenagerie.ApiClient;
+import com.pursuit.nycmenagerie.ApiService;
+import com.pursuit.nycmenagerie.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,34 @@ public class QuoteFragment extends Fragment {
             quote = getArguments().getString(QUOTE_KEY);
             author = getArguments().getString(AUTHOR_KEY);
         }
+        quoteRetrofitCallback();
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_quote, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = view.findViewById(R.id.recyclerview_quote);
+        adapter = new QuoteAdapter(quoteList, listener);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
+    private void quoteRetrofitCallback() {
         ApiClient.getInstance().create(ApiService.class).getQuotes().enqueue(new Callback<Quotes>() {
             @Override
             public void onResponse(Call<Quotes> call, Response<Quotes> response) {
@@ -80,32 +108,5 @@ public class QuoteFragment extends Fragment {
 
             }
         });
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_quote, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        recyclerView = view.findViewById(R.id.recyclerview_quote);
-        adapter = new QuoteAdapter(quoteList);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        listener = null;
     }
 }

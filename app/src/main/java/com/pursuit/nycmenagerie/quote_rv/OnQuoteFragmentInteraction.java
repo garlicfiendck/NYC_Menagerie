@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.quote_rv;
 
 public interface OnQuoteFragmentInteraction {
 
