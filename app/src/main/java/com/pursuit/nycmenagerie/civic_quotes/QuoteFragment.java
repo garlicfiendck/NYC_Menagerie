@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.pursuit.nycmenagerie.ApiClient;
 import com.pursuit.nycmenagerie.ApiService;
+import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 
 import java.util.ArrayList;
@@ -24,12 +25,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.support.constraint.Constraints.TAG;
-
 public class QuoteFragment extends Fragment {
 
-    public static final String QUOTE_KEY = "quote";
-    public static final String AUTHOR_KEY = "author";
+    public static final String QUOTE_KEY = "Quote";
+    public static final String AUTHOR_KEY = "Author";
+    private static final String QUOTE_TAG = "Quote Tag";
 
     private String quote;
     private String author;
@@ -38,24 +38,24 @@ public class QuoteFragment extends Fragment {
     private QuoteAdapter adapter;
     private List<QuoteResponse> quoteList = new ArrayList<>();
 
-    private OnQuoteFragmentInteraction listener;
+    private OnFragmentInteraction listener;
 
     public static QuoteFragment newInstance(String quote, String author){
         QuoteFragment quoteFragment = new QuoteFragment();
-        Bundle args = new Bundle();
-        args.putString(QUOTE_KEY, quote);
-        args.putString(AUTHOR_KEY, author);
-        quoteFragment.setArguments(args);
+        Bundle quoteArgs = new Bundle();
+        quoteArgs.putString(QUOTE_KEY, quote);
+        quoteArgs.putString(AUTHOR_KEY, author);
+        quoteFragment.setArguments(quoteArgs);
         return quoteFragment;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(context instanceof OnQuoteFragmentInteraction){
-            listener = (OnQuoteFragmentInteraction) context;
+        if(context instanceof OnFragmentInteraction){
+            listener = (OnFragmentInteraction) context;
         } else {
-            throw new RuntimeException(context.toString() + "must implement OnQuoteFragmentInteractionListener");
+            throw new RuntimeException(context.toString() + "must implement OnFragmentInteractionListener");
         }
     }
 
@@ -66,7 +66,7 @@ public class QuoteFragment extends Fragment {
             quote = getArguments().getString(QUOTE_KEY);
             author = getArguments().getString(AUTHOR_KEY);
         }
-        quoteRetrofitCallback();
+        quoteCallback();
     }
 
     @Override
@@ -93,18 +93,18 @@ public class QuoteFragment extends Fragment {
         listener = null;
     }
 
-    private void quoteRetrofitCallback() {
+    private void quoteCallback() {
         ApiClient.getInstance().create(ApiService.class).getQuotes().enqueue(new Callback<Quotes>() {
             @Override
             public void onResponse(Call<Quotes> call, Response<Quotes> response) {
-                Log.d(TAG, "onResponse: " + response.body());
+                Log.d(QUOTE_TAG, "onResponse: " + response.body());
                 quoteList.addAll(response.body().getCivicQuotes());
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onFailure(Call<Quotes> call, Throwable t) {
-                Log.e(TAG, "onFailure: " + t.toString());
+                Log.e(QUOTE_TAG, "onFailure: " + t.toString());
 
             }
         });

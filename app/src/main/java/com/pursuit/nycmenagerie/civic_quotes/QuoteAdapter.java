@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 
 import java.util.List;
@@ -13,9 +14,9 @@ import java.util.List;
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteViewHolder> {
 
     private List<QuoteResponse> quoteList;
-    private OnQuoteFragmentInteraction listener;
+    private OnFragmentInteraction listener;
 
-    public QuoteAdapter(List<QuoteResponse> quoteList, OnQuoteFragmentInteraction listener){
+    public QuoteAdapter(List<QuoteResponse> quoteList, OnFragmentInteraction listener){
         this.quoteList = quoteList;
         this.listener = listener;
     }
