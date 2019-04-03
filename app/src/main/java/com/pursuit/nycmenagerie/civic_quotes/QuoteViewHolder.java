@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 
 
@@ -18,9 +19,9 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
     private TextView txt_author;
     private ImageView img_fingerprint;
 
-    private OnQuoteFragmentInteraction listener;
+    private OnFragmentInteraction listener;
 
-    public QuoteViewHolder(@NonNull View itemView, OnQuoteFragmentInteraction listener) {
+    public QuoteViewHolder(@NonNull View itemView, OnFragmentInteraction listener) {
         super(itemView);
         this.listener = listener;
         txt_quote = itemView.findViewById(R.id.txt_quote);
