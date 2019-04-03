@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie.quote_rv;
+package com.pursuit.nycmenagerie.civic_quotes;
 
 public class QuoteResponse {
 
