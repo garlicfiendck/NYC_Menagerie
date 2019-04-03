@@ -1,6 +1,6 @@
 package com.pursuit.nycmenagerie;
 
-import com.pursuit.nycmenagerie.quote_rv.Quotes;
+import com.pursuit.nycmenagerie.civic_quotes.Quotes;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

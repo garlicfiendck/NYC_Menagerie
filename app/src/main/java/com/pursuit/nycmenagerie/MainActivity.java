@@ -1,15 +1,15 @@
 package com.pursuit.nycmenagerie;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.pursuit.nycmenagerie.quote_rv.OnQuoteFragmentInteraction;
-import com.pursuit.nycmenagerie.quote_rv.QuoteFragment;
+import com.pursuit.nycmenagerie.civic_quotes.OnQuoteFragmentInteraction;
+import com.pursuit.nycmenagerie.civic_quotes.QuoteFragment;
+import com.pursuit.nycmenagerie.civic_videos.VideoFragment;
 
-import static com.pursuit.nycmenagerie.quote_rv.QuoteFragment.AUTHOR_KEY;
-import static com.pursuit.nycmenagerie.quote_rv.QuoteFragment.QUOTE_KEY;
+import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.AUTHOR_KEY;
+import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.QUOTE_KEY;
 
 public class MainActivity extends AppCompatActivity implements OnQuoteFragmentInteraction {
 

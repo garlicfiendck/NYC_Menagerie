@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie.quote_rv;
+package com.pursuit.nycmenagerie.civic_quotes;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
