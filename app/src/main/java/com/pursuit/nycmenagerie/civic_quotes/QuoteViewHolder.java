@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
+import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
 
 
 public class QuoteViewHolder extends RecyclerView.ViewHolder {
@@ -29,7 +30,7 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
         img_fingerprint = itemView.findViewById(R.id.img_fingerprint);
     }
 
-    public void onBind(QuoteResponse quoteResponse) {
+    public void onBind(QuoteResponse quoteResponse, final VideoResponse videoResponse) {
 
         txt_quote.setText(quoteResponse.getQuote());
         txt_author.setText(quoteResponse.getAuthor());
@@ -39,9 +40,15 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Log.d(TAG_FINGERPRINT, "onClick: " + listener);
                 if (listener != null) {
-                    listener.toVideoFragment();
+                    listener.toVideoFragment(videoResponse);
                 }
             }
         });
+    }
+
+    public void onQuoteBind(QuoteResponse quoteResponse) {
+
+        txt_quote.setText(quoteResponse.getQuote());
+        txt_author.setText(quoteResponse.getAuthor());
     }
 }
