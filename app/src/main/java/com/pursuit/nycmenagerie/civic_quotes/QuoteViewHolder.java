@@ -34,7 +34,7 @@ public class QuoteViewHolder extends RecyclerView.ViewHolder {
         txt_quote.setText(quoteResponse.getQuote());
         txt_author.setText(quoteResponse.getAuthor());
 
-        img_fingerprint.setOnClickListener(new View.OnClickListener() {
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG_FINGERPRINT, "onClick: " + listener);
