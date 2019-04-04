@@ -78,6 +78,7 @@ public class VideoFragment extends Fragment {
             @Override
             public void onResponse(Call<Videos> call, Response<Videos> response) {
                 Log.d(VIDEO_TAG, "onResponse: " + response.body().toString());
+
             }
 
             @Override
@@ -103,6 +104,14 @@ public class VideoFragment extends Fragment {
 
         txt_title_video.setText(TITLE_KEY);
 
+        btn_play_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listener != null){
+                    listener.viewVideoViaWebView();
+                }
+            }
+        });
     }
 
     @Override
