@@ -8,6 +8,7 @@ import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.civic_quotes.QuoteFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoFragment;
+import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
 
 import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.AUTHOR_KEY;
 import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.QUOTE_KEY;
@@ -16,7 +17,6 @@ import static com.pursuit.nycmenagerie.civic_videos.VideoFragment.VIDEO_KEY;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteraction {
 
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,27 +24,25 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         setContentView(R.layout.activity_main);
 
 
-        intent = getIntent();
-
         inflateQuoteFragment();
+//        toVideoFragment(videoResponse);
 
     }
-
-    @Override
-    public void toVideoFragment() {
-        VideoFragment videoFragment = VideoFragment.newInstance(intent.getStringExtra(TITLE_KEY), intent.getStringExtra(VIDEO_KEY));
+    private void inflateQuoteFragment() {
+        QuoteFragment quoteFragment = QuoteFragment.newInstance();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_main, videoFragment)
+                .replace(R.id.container_main, quoteFragment)
                 .addToBackStack(null)
                 .commit();
     }
 
-    private void inflateQuoteFragment() {
-        QuoteFragment quoteFragment = QuoteFragment.newInstance(intent.getStringExtra(QUOTE_KEY), intent.getStringExtra(AUTHOR_KEY));
+    @Override
+    public void toVideoFragment(VideoResponse videoResponse) {
+        VideoFragment videoFragment = VideoFragment.newInstance(videoResponse.getTitle(), videoResponse.getVideoUrl());
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_main, quoteFragment)
+                .replace(R.id.container_main, videoFragment)
                 .addToBackStack(null)
                 .commit();
     }

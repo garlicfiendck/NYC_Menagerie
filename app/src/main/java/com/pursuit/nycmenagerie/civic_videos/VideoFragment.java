@@ -14,10 +14,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.pursuit.nycmenagerie.ApiClient;
 import com.pursuit.nycmenagerie.ApiService;
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +30,7 @@ public class VideoFragment extends Fragment {
 
     public static final String TITLE_KEY = "Title";
     public static final String VIDEO_KEY = "Video";
-    private static final String VIDEO_TAG = "Video Tag" ;
+    private static final String CLICK_TAG = "Click Tag";
 
     private String title;
     private String videoUrl;
@@ -67,25 +69,6 @@ public class VideoFragment extends Fragment {
             title = getArguments().getString(TITLE_KEY);
             videoUrl = getArguments().getString(VIDEO_KEY);
         }
-        videoCallback();
-    }
-
-    private void videoCallback() {
-        ApiClient.getInstance()
-                .create(ApiService.class)
-                .getVideos()
-                .enqueue(new Callback<Videos>() {
-            @Override
-            public void onResponse(Call<Videos> call, Response<Videos> response) {
-                Log.d(VIDEO_TAG, "onResponse: " + response.body().toString());
-
-            }
-
-            @Override
-            public void onFailure(Call<Videos> call, Throwable t) {
-                Log.e(VIDEO_TAG, "onFailure: " + t.getStackTrace());
-            }
-        });
     }
 
     @Override
@@ -102,11 +85,13 @@ public class VideoFragment extends Fragment {
         img_thumbnail_video = view.findViewById(R.id.img_thumbnail_video);
         btn_play_video = view.findViewById(R.id.btn_play_video);
 
-        txt_title_video.setText(TITLE_KEY);
+        txt_title_video.setText(title);
+        Picasso.get().load(videoUrl).into(img_thumbnail_video);
 
         btn_play_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(CLICK_TAG, "onClick: button in working order");
                 if(listener != null){
                     listener.viewVideoViaWebView();
                 }
