@@ -1,6 +1,5 @@
 package com.pursuit.nycmenagerie.host;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,11 +8,7 @@ import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.civic_quotes.QuoteFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
-
-import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.AUTHOR_KEY;
-import static com.pursuit.nycmenagerie.civic_quotes.QuoteFragment.QUOTE_KEY;
-import static com.pursuit.nycmenagerie.civic_videos.VideoFragment.TITLE_KEY;
-import static com.pursuit.nycmenagerie.civic_videos.VideoFragment.VIDEO_KEY;
+import com.pursuit.nycmenagerie.webview_videos.VideoWebviewFragment;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteraction {
 
@@ -39,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
     @Override
     public void toVideoFragment(VideoResponse videoResponse) {
-        VideoFragment videoFragment = VideoFragment.newInstance(videoResponse.getTitle(), videoResponse.getVideoUrl());
+        VideoFragment videoFragment = VideoFragment.newInstance(videoResponse.getTitle(), videoResponse.getImageFile(), videoResponse.getVideoUrl());
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container_main, videoFragment)
@@ -49,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
     @Override
     public void viewVideoViaWebView() {
+        VideoWebviewFragment videoWebviewFragment = VideoWebviewFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container_main, videoWebviewFragment)
+                .addToBackStack(null)
+                .commit();
 
     }
 }

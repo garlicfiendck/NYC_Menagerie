@@ -30,9 +30,12 @@ public class VideoFragment extends Fragment {
 
     public static final String TITLE_KEY = "Title";
     public static final String VIDEO_KEY = "Video";
+    public static final String IMAGE_KEY = "Image";
+
     private static final String CLICK_TAG = "Click Tag";
 
     private String title;
+    private String imageFile;
     private String videoUrl;
 
     private TextView txt_title_video;
@@ -43,10 +46,11 @@ public class VideoFragment extends Fragment {
 
     public VideoFragment() {}
 
-    public static VideoFragment newInstance(String title, String videoUrl){
+    public static VideoFragment newInstance(String title, String imageFile, String videoUrl){
         VideoFragment videoFragment = new VideoFragment();
         Bundle videoArgs = new Bundle();
         videoArgs.putString(TITLE_KEY, title);
+        videoArgs.putString(IMAGE_KEY, imageFile);
         videoArgs.putString(VIDEO_KEY, videoUrl);
         videoFragment.setArguments(videoArgs);
         return videoFragment;
@@ -67,7 +71,9 @@ public class VideoFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if(getArguments() != null){
             title = getArguments().getString(TITLE_KEY);
+            imageFile = getArguments().getString(IMAGE_KEY);
             videoUrl = getArguments().getString(VIDEO_KEY);
+
         }
     }
 
@@ -86,7 +92,9 @@ public class VideoFragment extends Fragment {
         btn_play_video = view.findViewById(R.id.btn_play_video);
 
         txt_title_video.setText(title);
-        Picasso.get().load(videoUrl).into(img_thumbnail_video);
+
+        String thumbnail = imageFile.substring(0, imageFile.length() - 4);
+        Picasso.get().load(getDrawableId(view.getContext(),thumbnail)).into(img_thumbnail_video);
 
         btn_play_video.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +102,7 @@ public class VideoFragment extends Fragment {
                 Log.d(CLICK_TAG, "onClick: button in working order");
                 if(listener != null){
                     listener.viewVideoViaWebView();
+                    Log.d("videourl?", "onClick: videourl passes through");
                 }
             }
         });
@@ -103,5 +112,9 @@ public class VideoFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         listener = null;
+    }
+
+    private int getDrawableId(Context context, String name_drawable) {
+        return context.getResources().getIdentifier(name_drawable, "drawable", context.getPackageName());
     }
 }
