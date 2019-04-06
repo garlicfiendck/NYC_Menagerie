@@ -87,21 +87,26 @@ public class VideoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        final Bundle videoArgs = getArguments();
+
         txt_title_video = view.findViewById(R.id.txt_title_video);
         img_thumbnail_video = view.findViewById(R.id.img_thumbnail_video);
         btn_play_video = view.findViewById(R.id.btn_play_video);
 
+        //set title to text view
         txt_title_video.setText(title);
 
+        //pass in drawable data and set to imageview
         String thumbnail = imageFile.substring(0, imageFile.length() - 4);
         Picasso.get().load(getDrawableId(view.getContext(),thumbnail)).into(img_thumbnail_video);
 
+        //set listener to button and pass videourl back to main activity to youtube fragment
         btn_play_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(CLICK_TAG, "onClick: button in working order");
                 if(listener != null){
-                    listener.viewVideoViaWebView();
+                    listener.toYoutubeFragment(videoArgs.getString(VIDEO_KEY));
                     Log.d("videourl?", "onClick: videourl passes through");
                 }
             }
