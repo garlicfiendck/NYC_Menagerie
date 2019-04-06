@@ -2,6 +2,7 @@ package com.pursuit.nycmenagerie.civic_quotes;
 
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -40,6 +41,8 @@ public class QuoteFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private QuoteAdapter adapter;
+//    private static long currentVisiblePosition;
+
     private List<QuoteResponse> quoteList = new ArrayList<>();
     private List<VideoResponse> videoList = new ArrayList<>();
 
@@ -88,10 +91,32 @@ public class QuoteFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview_quote);
         adapter = new QuoteAdapter(quoteList, videoList, listener);
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+//        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        } else {
+//            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        }
 
     }
+//
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        currentVisiblePosition = 0;
+//        currentVisiblePosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        recyclerView.getLayoutManager().scrollToPosition((int) currentVisiblePosition);
+//        currentVisiblePosition = 0;
+//    }
 
     @Override
     public void onDetach() {
