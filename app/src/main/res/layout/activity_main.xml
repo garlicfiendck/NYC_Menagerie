@@ -9,6 +9,8 @@
     tools:context=".host.MainActivity"
     tools:openDrawer="start">
 
+    <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
