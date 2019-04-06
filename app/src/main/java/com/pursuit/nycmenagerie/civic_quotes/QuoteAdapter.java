@@ -16,8 +16,10 @@ import java.util.List;
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteViewHolder> {
 
     private static final String ADAPTER_TAG = "Adapter Tag";
+
     private List<QuoteResponse> quoteList;
     private List<VideoResponse> videoList;
+
     private OnFragmentInteraction listener;
 
     public QuoteAdapter(List<QuoteResponse> quoteList, List<VideoResponse> videoList, OnFragmentInteraction listener){
@@ -37,7 +39,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteViewHolder> {
     public void onBindViewHolder(@NonNull QuoteViewHolder quoteViewHolder, int i) {
         if(!videoList.isEmpty()){
             quoteViewHolder.onBind(quoteList.get(i), videoList.get(i));
-            Log.d(ADAPTER_TAG, "onBindViewHolder: getting both lists");
+            Log.d(ADAPTER_TAG, "onBindViewHolder: getting two lists");
         } else {
             quoteViewHolder.onQuoteBind(quoteList.get(i));
         }

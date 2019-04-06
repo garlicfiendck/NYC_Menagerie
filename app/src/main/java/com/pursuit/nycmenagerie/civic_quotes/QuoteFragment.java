@@ -29,10 +29,11 @@ import retrofit2.Response;
 
 public class QuoteFragment extends Fragment {
 
-    public static final String QUOTE_KEY = "Quote";
-    public static final String AUTHOR_KEY = "Author";
+//    public static final String QUOTE_KEY = "Quote";
+//    public static final String AUTHOR_KEY = "Author";
     private static final String QUOTE_TAG = "Quote Tag";
     private static final String VIDEO_TAG = "Video Tag";
+//    private static final String IMAGE_TAG = "Image Tag";
 
 //    private String quote;
 //    private String author;
@@ -137,4 +138,5 @@ public class QuoteFragment extends Fragment {
                     }
                 });
     }
+
 }

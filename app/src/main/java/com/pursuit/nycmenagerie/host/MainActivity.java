@@ -8,7 +8,7 @@ import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.civic_quotes.QuoteFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
-import com.pursuit.nycmenagerie.webview_videos.VideoWebviewFragment;
+import com.pursuit.nycmenagerie.youtube.YoutubeFragment;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteraction {
 
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     @Override
-    public void viewVideoViaWebView() {
-        VideoWebviewFragment videoWebviewFragment = VideoWebviewFragment.newInstance();
+    public void toYoutubeFragment(String videoID) {
+        YoutubeFragment youtubeFragment = YoutubeFragment.newInstance(videoID);
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_main, videoWebviewFragment)
+                .replace(R.id.container_main, youtubeFragment)
                 .addToBackStack(null)
                 .commit();
-
     }
+
 }
