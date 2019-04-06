@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_upcoming_elections"
+            android:icon="@drawable/ic_save_the_date"
+            android:title="Upcoming Elections"/>
+        <item android:id="@+id/nav_polling_location"
+            android:icon="@drawable/ic_polling_location"
+            android:title="Polling Location"/>
+        <item android:id="@+id/nav_voter_status"
+            android:icon="@drawable/ic_voter_status"
+            android:title="Voter Status"/>
+        <item android:id="@+id/nav_pollworker"
+            android:icon="@drawable/ic_pollworker"
+            android:title="Pollworker"/>
+    </group>
+
+</menu>
+

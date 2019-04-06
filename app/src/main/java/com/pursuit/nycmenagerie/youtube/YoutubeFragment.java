@@ -22,9 +22,8 @@ public class YoutubeFragment extends Fragment {
     private FragmentActivity myContext;
 
     private YouTubePlayer tubePlayer;
-    public static final String YOUTUBE_KEY = "Youtube Key";
-    public static final String YT_DEVELOPER_KEY = "AIzaSyDnLvtDzL4vCY-hIP8axH2GFv03XU6zLgs";
-    public static final int RECOVERY_DIALOG_REQUEST = 1;
+    private static final String YOUTUBE_KEY = "Youtube Key";
+    private static final String YT_DEVELOPER_KEY = "AIzaSyDnLvtDzL4vCY-hIP8axH2GFv03XU6zLgs";
 
     public YoutubeFragment() {
     }
@@ -56,6 +55,7 @@ public class YoutubeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final Bundle ytArgs = getArguments();
+//        final MyPlayerStateChangeListener myPlayerStateChangeListener = new MyPlayerStateChangeListener(savedInstanceState);
 
         YouTubePlayerSupportFragment youTubePlayerSupportFragment = YouTubePlayerSupportFragment.newInstance();
         getChildFragmentManager()
@@ -67,9 +67,9 @@ public class YoutubeFragment extends Fragment {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
                 if (!wasRestored) {
+
                     tubePlayer = youTubePlayer;
-//                    tubePlayer.setPlayerStateChangeListener();
-//                    tubePlayer.setPlaybackEventListener();
+//                    tubePlayer.setPlayerStateChangeListener(myPlayerStateChangeListener);
                     tubePlayer.loadVideo(ytArgs.getString(YOUTUBE_KEY));
                     tubePlayer.play();
                 }
@@ -83,4 +83,53 @@ public class YoutubeFragment extends Fragment {
             }
         });
     }
+
+    private class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
+
+        private String playerState = "UNINITIALIZED";
+        private Bundle savedInstanceState;
+
+        public MyPlayerStateChangeListener(Bundle savedInstanceState) {
+            this.savedInstanceState = savedInstanceState;
+
+        }
+
+        @Override
+        public void onLoading() {
+            playerState = "LOADING";
+        }
+
+        @Override
+        public void onLoaded(String s) {
+            String.format("LOADED %s", s);
+        }
+
+        @Override
+        public void onAdStarted() {
+            playerState = "AD STARTING";
+        }
+
+        @Override
+        public void onVideoStarted() {
+            if (savedInstanceState != null) {
+                System.out.println("current time: " + savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
+                tubePlayer.seekToMillis(savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
+                playerState = "VIDEO STARTED";
+            }
+        }
+
+        @Override
+        public void onVideoEnded() {
+
+        }
+
+        @Override
+        public void onError(YouTubePlayer.ErrorReason errorReason) {
+
+        }
+    }
 }
+
+
+
+
