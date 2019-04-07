@@ -14,16 +14,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.pursuit.nycmenagerie.ApiClient;
-import com.pursuit.nycmenagerie.ApiService;
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 import com.squareup.picasso.Picasso;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class VideoFragment extends Fragment {

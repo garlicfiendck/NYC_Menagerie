@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.network;
 
 import com.pursuit.nycmenagerie.civic_quotes.Quotes;
 import com.pursuit.nycmenagerie.civic_videos.Videos;

@@ -2,7 +2,6 @@ package com.pursuit.nycmenagerie.civic_quotes;
 
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,8 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pursuit.nycmenagerie.ApiClient;
-import com.pursuit.nycmenagerie.ApiService;
+import com.pursuit.nycmenagerie.network.ApiClient;
+import com.pursuit.nycmenagerie.network.ApiService;
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
