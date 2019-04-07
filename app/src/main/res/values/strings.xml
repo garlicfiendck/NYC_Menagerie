@@ -6,5 +6,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bio_creator">Caroline hails from Flushing, and is a garlic fiend so she expects to live until she’s 101 as a spritely elderly lady. And in between, build some unforgettable codes - both insanely good and terribly bad.</string>
+    <string name="name_creator">Caroline Kang</string>
+    <string name="btn_linkedin">Say hello on linkedin</string>
+    <string name="btn_github_repo">Check out ongoing projects on Github</string>
+    <string name="linkedin_creator">https://www.linkedin.com/in/carolinehkang/</string>
+    <string name="github_creator">https://github.com/garlicfiendck?tab=repositories</string>
 
 </resources>

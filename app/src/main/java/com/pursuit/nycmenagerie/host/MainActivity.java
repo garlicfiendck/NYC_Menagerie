@@ -1,5 +1,7 @@
 package com.pursuit.nycmenagerie.host;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.pursuit.nycmenagerie.nav_drawer.CreatorFragment;
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        onHeaderClick(navigationView);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -82,6 +87,20 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
                 .replace(R.id.container_main, youtubeFragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @Override
+    public void openLinkedin(String website) {
+        Uri linkedinUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, linkedinUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openGithubRepo(String website) {
+        Uri githubUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, githubUri);
+        startActivity(intent);
     }
 
     @Override
@@ -130,5 +149,15 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
                 .replace(R.id.container_main, quoteFragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    private void onHeaderClick(NavigationView navigationView) {
+        View headerView = navigationView.getHeaderView(0);
+        headerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inflateQuoteFragment();
+            }
+        });
     }
 }

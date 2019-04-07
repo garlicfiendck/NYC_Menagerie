@@ -1,4 +1,4 @@
-package com.pursuit.nycmenagerie;
+package com.pursuit.nycmenagerie.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
