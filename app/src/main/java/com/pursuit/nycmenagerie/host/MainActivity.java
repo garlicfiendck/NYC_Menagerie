@@ -104,6 +104,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     @Override
+    public void openNYCBOEPollsiteLocator(String website) {
+        Uri pollsiteLocatorUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, pollsiteLocatorUri);
+        startActivity(intent);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_upcoming_elections:

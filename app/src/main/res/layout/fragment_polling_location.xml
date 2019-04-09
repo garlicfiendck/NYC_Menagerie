@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".nav_drawer.PollingLocationFragment"
-    android:background="#FF5722">
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/logo_vote_nyc"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:src="@drawable/logo_vote_nyc"
+        app:layout_constraintBottom_toTopOf="@id/txt_expectations"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/txt_expectations"
+        android:layout_width="340dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal"
+        android:text="@string/txt_expectations"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_web_pollsite_locator"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_web_pollsite_locator"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="80dp"
+        android:background="#190033"
+        android:text="Lookup Address"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -8,4 +8,5 @@ public interface OnFragmentInteraction {
     void toYoutubeFragment(String videoID);
     void openLinkedin(String website);
     void openGithubRepo(String website);
+    void openNYCBOEPollsiteLocator(String website);
 }
