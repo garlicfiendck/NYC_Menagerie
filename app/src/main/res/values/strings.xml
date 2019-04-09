@@ -12,5 +12,7 @@
     <string name="btn_github_repo">Check out ongoing projects on Github</string>
     <string name="linkedin_creator">https://www.linkedin.com/in/carolinehkang/</string>
     <string name="github_creator">https://github.com/garlicfiendck?tab=repositories</string>
+    <string name="link_pollsite_locator">https://nyc.pollsitelocator.com/search</string>
+    <string name="txt_expectations">Upon clicking the button, you will be prompted to enter your house #, street name, and zip code on the NYC Board of Elections Pollsite Locator page</string>
 
 </resources>
