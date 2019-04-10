@@ -90,27 +90,6 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     @Override
-    public void openLinkedin(String website) {
-        Uri linkedinUri = Uri.parse(website);
-        Intent intent = new Intent(Intent.ACTION_VIEW, linkedinUri);
-        startActivity(intent);
-    }
-
-    @Override
-    public void openGithubRepo(String website) {
-        Uri githubUri = Uri.parse(website);
-        Intent intent = new Intent(Intent.ACTION_VIEW, githubUri);
-        startActivity(intent);
-    }
-
-    @Override
-    public void openNYCBOEPollsiteLocator(String website) {
-        Uri pollsiteLocatorUri = Uri.parse(website);
-        Intent intent = new Intent(Intent.ACTION_VIEW, pollsiteLocatorUri);
-        startActivity(intent);
-    }
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_upcoming_elections:
@@ -147,6 +126,41 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void openLinkedin(String website) {
+        Uri linkedinUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, linkedinUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openGithubRepo(String website) {
+        Uri githubUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, githubUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openNYCBOEPollsiteLocator(String website) {
+        Uri pollsiteLocatorUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, pollsiteLocatorUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openPWApplyOnline(String website) {
+        Uri pollworkerUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, pollworkerUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openPWMoreInfo(String website) {
+        Uri pwMoreInforUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, pwMoreInforUri);
+        startActivity(intent);
     }
 
     private void inflateQuoteFragment() {

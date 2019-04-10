@@ -14,5 +14,12 @@
     <string name="github_creator">https://github.com/garlicfiendck?tab=repositories</string>
     <string name="link_pollsite_locator">https://nyc.pollsitelocator.com/search</string>
     <string name="txt_expectations">Upon clicking the button, you will be prompted to enter your house #, street name, and zip code on the NYC Board of Elections Pollsite Locator page</string>
+    <string name="pw_txt_1">Depending on your registration status and availability you may be assigned to work as an Inspector, Poll Clerk, Information Clerk or Accessibility Clerk.</string>
+    <string name="pw_txt_2"><![CDATA[Inspector/Poll Clerk are generally responsible for the operations in the ED, including opening the polls, serving voters and closing the polls including accuracy of canvass. Inspectors must stay for completion of canvass and tally. Ensures that Affidavit Ballot Envelopes are completed correctly and signs each one. Responsible for the set-up & closing of the Ballot Marking Device and Scanner. Assists the voter as needed on this equipment]]></string>
+    <string name="pw_txt_3">Information Clerk use the Street Finder and Poll Site List to direct voters to their correct ED/AD and poll site. May also be re-assigned to be an Inspector or Poll Clerk on Election Day, as necessary.</string>
+    <string name="pw_txt_4">Accessibility Clerk ensures that the alternate entrance is accessible throughout the day. Monitors the entrance to prevent unauthorized individuals from entering. Checks to see that a ramp with handrails and/or platform are in place if required. Assists but does not provide physical help to disabled voters entering the site. Checks that access posters, directional arrows, Vote Here signs and all other outdoor signs are hung properly.</string>
+    <string name="pw_int_text">The Interpreter assists non-English speaking voters by translating voting information given by the Inspector and answers voter questions. The Interpreter may also assist non-English and limited-English speaking voters in voting booths.</string>
+    <string name="link_pw_ap_online">https://nyc.electiondayworker.com/r/rA_4yzXNYkmL7ahEXYi0dw</string>
+    <string name="link_ap_pw_more_info">https://www.vote.nyc.ny.us/html/workers/positions.shtml</string>
 
 </resources>
