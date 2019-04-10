@@ -9,4 +9,6 @@ public interface OnFragmentInteraction {
     void openLinkedin(String website);
     void openGithubRepo(String website);
     void openNYCBOEPollsiteLocator(String website);
+    void openPWApplyOnline(String website);
+    void openPWMoreInfo(String website);
 }

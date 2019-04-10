@@ -2,6 +2,8 @@ package com.pursuit.nycmenagerie.tab_pollworker;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,15 +11,10 @@ import android.view.ViewGroup;
 
 import com.pursuit.nycmenagerie.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DscPWFragment extends Fragment {
 
 
-    public DscPWFragment() {
-        // Required empty public constructor
-    }
+    public DscPWFragment() {}
 
 
     @Override
@@ -27,4 +24,10 @@ public class DscPWFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_dsc_pw, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+    }
 }
