@@ -13,4 +13,7 @@ public interface OnFragmentInteraction {
     void openPWMoreInfo(String website);
     void openChkReg(String website);
     void callBOEHotline(String phoneNumber);
+    void regVoteDLApp(String website);
+    void regVoteOnline(String website);
+    void regVoteInPerson(String website);
 }

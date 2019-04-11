@@ -57,7 +57,7 @@ public class CheckRegFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.callBOEHotline("(866)8683692");
+                    listener.callBOEHotline(getString(R.string.phone_boe_hotline));
                 }
             }
         });

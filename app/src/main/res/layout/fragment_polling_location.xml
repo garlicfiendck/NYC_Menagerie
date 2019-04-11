@@ -42,7 +42,7 @@
         android:layout_marginBottom="80dp"
         android:background="#190033"
         android:text="Lookup Address"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"

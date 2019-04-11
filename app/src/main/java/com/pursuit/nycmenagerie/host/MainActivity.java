@@ -179,6 +179,27 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         }
     }
 
+    @Override
+    public void regVoteDLApp(String website) {
+        Uri regVoteDLAppUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, regVoteDLAppUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void regVoteOnline(String website) {
+        Uri regVoteOnlineUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, regVoteOnlineUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void regVoteInPerson(String website) {
+        Uri regVoteInPersonUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, regVoteInPersonUri);
+        startActivity(intent);
+    }
+
     private void inflateQuoteFragment() {
         QuoteFragment quoteFragment = QuoteFragment.newInstance();
         getSupportFragmentManager()

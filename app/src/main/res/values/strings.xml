@@ -4,8 +4,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bio_creator">Caroline hails from Flushing, and is a garlic fiend so she expects to live until she’s 101 as a spritely elderly lady. And in between, build some unforgettable codes - both insanely good and terribly bad.</string>
     <string name="name_creator">Caroline Kang</string>
     <string name="btn_linkedin">Say hello on linkedin</string>
@@ -23,8 +21,19 @@
     <string name="link_ap_pw_more_info">https://www.vote.nyc.ny.us/html/workers/positions.shtml</string>
     <string name="chk_reg_question">Am I Registered to Vote?</string>
     <string name="link_chk_reg">https://voterlookup.elections.ny.gov/</string>
-    <string name="txt_reg_3"><b><u>In-Person:</u></b> Register to vote in person at one of BOE offices.</string>
-    <string name="txt_reg_2"><b><u>Online:</u></b> If you have a valid ID from the New York State Department of Motor Vehicles, you can register to vote online.</string>
-    <string name="txt_reg_1"><b><u>By Mail:</u></b> Visit the website to download the application, complete the form, sign it, and mail it to: <b>Board of Elections 32 Broadway, 7 Fl New York, NY 10004–1609 </b> Your form must be delivered or mailed at least 25 days before the next election for it to be effective for that election. Please note: BOE does not accept any kind of digital or Adobe-generated signature. You may also obtain Registration Forms from libraries, post offices, and most New York City government agencies, or by calling the Phone Bank at 1.866.VOTE.NYC and we\'ll send you a postage-paid registration form in the mail.</string>
+    <string name="txt_reg_2"><b><u>In-Person:</u></b> Register to vote in person at one of BOE offices.</string>
+    <string name="txt_reg_3"><b><u>Online:</u></b> If you have a valid ID from the New York State Department of Motor Vehicles, you can register to vote online.</string>
+    <string name="txt_reg_1"><b><u>By Mail:</u></b> Visit the website to download the application, complete the form, sign it, and mail it to: <b>Board of Elections 32 Broadway, 7 Fl New York, NY 10004–1609. </b> Your form must be delivered or mailed at least 25 days before the next election for it to be effective for that election. You may also obtain Registration Forms from libraries, post offices, and most New York City government agencies, or by calling the Phone Bank at <b> 1.866.VOTE.NYC </b> and we\'ll send you a postage-paid registration form in the mail.</string>
     <string name="txt_reg_intro">You can register to vote by mail, in-person, or online.</string>
+    <string name="link_regVoteDLApp">https://www.vote.nyc.ny.us/html/voters/register.shtml</string>
+    <string name="regVoteInPerson">https://www.vote.nyc.ny.us/html/contact/offices.shtml</string>
+    <string name="regVoteOnline">https://dmv.ny.gov/more-info/electronic-voter-registration-application</string>
+    <string name="phone_boe_hotline">(866)8683692</string>
+    <string name="txt_visit_boe_dl_app">Visit Website</string>
+    <string name="txt_boe_offices">BOE Offices</string>
+    <string name="txt_register_online">Register Online</string>
+    <string name="txt_hd_register_to_vote">Register to Vote</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
