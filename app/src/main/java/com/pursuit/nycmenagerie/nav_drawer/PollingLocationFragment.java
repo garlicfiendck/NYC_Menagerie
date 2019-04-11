@@ -18,12 +18,11 @@ import com.pursuit.nycmenagerie.R;
 public class PollingLocationFragment extends Fragment {
 
     private Button btn_web_pollsite_locator;
-    private ImageView sticker_i_voted;
+    private ImageView logo_vote_nyc;
     private OnFragmentInteraction listener;
 
 
-    public PollingLocationFragment() {
-    }
+    public PollingLocationFragment() {}
 
     @Override
     public void onAttach(Context context) {
@@ -45,10 +44,10 @@ public class PollingLocationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        sticker_i_voted = view.findViewById(R.id.logo_vote_nyc);
+        logo_vote_nyc = view.findViewById(R.id.logo_vote_nyc);
         btn_web_pollsite_locator = view.findViewById(R.id.btn_web_pollsite_locator);
 
-        sticker_i_voted.setOnClickListener(new View.OnClickListener() {
+        logo_vote_nyc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(listener != null){

@@ -10,8 +10,8 @@ import java.util.List;
 
 public class PollworkerTabAdapter extends FragmentStatePagerAdapter {
 
-    private final List<Fragment> pwTabList = new ArrayList<>();
-    private final List<String> pwTitleList = new ArrayList<>();
+    final private List<Fragment> pwTabList = new ArrayList<>();
+    final private List<String> pwTitleList = new ArrayList<>();
 
     public PollworkerTabAdapter(FragmentManager fm) {
         super(fm);
@@ -22,10 +22,6 @@ public class PollworkerTabAdapter extends FragmentStatePagerAdapter {
         return pwTabList.get(i);
     }
 
-    public void addFragment(Fragment fragment, String title) {
-        pwTabList.add(fragment);
-        pwTitleList.add(title);
-    }
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
@@ -35,5 +31,10 @@ public class PollworkerTabAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return pwTabList.size();
+    }
+
+    public void addFragment(Fragment fragment, String title) {
+        pwTabList.add(fragment);
+        pwTitleList.add(title);
     }
 }

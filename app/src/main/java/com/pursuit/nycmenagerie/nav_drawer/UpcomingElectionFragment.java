@@ -13,8 +13,7 @@ import com.pursuit.nycmenagerie.R;
 public class UpcomingElectionFragment extends Fragment {
 
 
-    public UpcomingElectionFragment() {
-    }
+    public UpcomingElectionFragment() {}
 
 
     @Override

@@ -11,4 +11,6 @@ public interface OnFragmentInteraction {
     void openNYCBOEPollsiteLocator(String website);
     void openPWApplyOnline(String website);
     void openPWMoreInfo(String website);
+    void openChkReg(String website);
+    void callBOEHotline(String phoneNumber);
 }
