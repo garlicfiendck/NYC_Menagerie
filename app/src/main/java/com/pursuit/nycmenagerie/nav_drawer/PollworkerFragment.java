@@ -23,14 +23,8 @@ public class PollworkerFragment extends Fragment implements ViewPager.OnPageChan
     private PollworkerTabAdapter pwAdapter;
     private TabLayout pwTabLayout;
     private ViewPager pwViewPager;
-    private SlidingSplashView pwSplashView;
 
     public PollworkerFragment() {
-    }
-
-    public static PollworkerFragment newInstance(){
-        PollworkerFragment pollworkerFragment = new PollworkerFragment();
-        return pollworkerFragment;
     }
 
     @Override
@@ -45,9 +39,6 @@ public class PollworkerFragment extends Fragment implements ViewPager.OnPageChan
 
         pwViewPager = view.findViewById(R.id.pw_viewPager);
         pwTabLayout = view.findViewById(R.id.pw_tabLayout);
-        pwSplashView = view.findViewById(R.id.pw_splash);
-
-        pwSplashView.addOnPageChangeListener(this);
 
         pwAdapter = new PollworkerTabAdapter(getChildFragmentManager());
 

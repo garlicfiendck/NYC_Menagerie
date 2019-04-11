@@ -163,6 +163,22 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         startActivity(intent);
     }
 
+    @Override
+    public void openChkReg(String website) {
+        Uri chkRegUri = Uri.parse(website);
+        Intent intent = new Intent(Intent.ACTION_VIEW, chkRegUri);
+        startActivity(intent);
+    }
+
+    @Override
+    public void callBOEHotline(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
     private void inflateQuoteFragment() {
         QuoteFragment quoteFragment = QuoteFragment.newInstance();
         getSupportFragmentManager()
