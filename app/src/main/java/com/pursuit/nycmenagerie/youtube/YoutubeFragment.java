@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.pursuit.nycmenagerie.BuildConfig;
 import com.pursuit.nycmenagerie.R;
 
 public class YoutubeFragment extends Fragment {
@@ -23,7 +24,7 @@ public class YoutubeFragment extends Fragment {
 
     private YouTubePlayer tubePlayer;
     private static final String YOUTUBE_KEY = "Youtube Key";
-    private static final String YT_DEVELOPER_KEY = "AIzaSyDnLvtDzL4vCY-hIP8axH2GFv03XU6zLgs";
+    private static final String YT_DEVELOPER_KEY = BuildConfig.ApiKey;
 
     public YoutubeFragment() {
     }
@@ -33,6 +34,7 @@ public class YoutubeFragment extends Fragment {
         Bundle ytArgs = new Bundle();
         ytArgs.putString(YOUTUBE_KEY, videoUrl);
         youtubeFragment.setArguments(ytArgs);
+        youtubeFragment.setRetainInstance(true);
         return youtubeFragment;
     }
 
@@ -82,52 +84,69 @@ public class YoutubeFragment extends Fragment {
                 Log.d("errorMessage:", errorMessage);
             }
         });
+
     }
 
-    private class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
-
-        private String playerState = "UNINITIALIZED";
-        private Bundle savedInstanceState;
-
-        public MyPlayerStateChangeListener(Bundle savedInstanceState) {
-            this.savedInstanceState = savedInstanceState;
-
-        }
-
-        @Override
-        public void onLoading() {
-            playerState = "LOADING";
-        }
-
-        @Override
-        public void onLoaded(String s) {
-            String.format("LOADED %s", s);
-        }
-
-        @Override
-        public void onAdStarted() {
-            playerState = "AD STARTING";
-        }
-
-        @Override
-        public void onVideoStarted() {
-            if (savedInstanceState != null) {
-                System.out.println("current time: " + savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
-                tubePlayer.seekToMillis(savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
-                playerState = "VIDEO STARTED";
-            }
-        }
-
-        @Override
-        public void onVideoEnded() {
-
-        }
-
-        @Override
-        public void onError(YouTubePlayer.ErrorReason errorReason) {
-
-        }
+    @Override
+    public void onResume() {
+        super.onResume();
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    //
+//    private class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
+//
+//        private String playerState = "UNINITIALIZED";
+//        private Bundle savedInstanceState;
+//
+//        public MyPlayerStateChangeListener(Bundle savedInstanceState) {
+//            this.savedInstanceState = savedInstanceState;
+//
+//        }
+//
+//        @Override
+//        public void onLoading() {
+//            playerState = "LOADING";
+//        }
+//
+//        @Override
+//        public void onLoaded(String s) {
+//            String.format("LOADED %s", s);
+//        }
+//
+//        @Override
+//        public void onAdStarted() {
+//            playerState = "AD STARTING";
+//        }
+//
+//        @Override
+//        public void onVideoStarted() {
+//            if (savedInstanceState != null) {
+//                System.out.println("current time: " + savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
+//                tubePlayer.seekToMillis(savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
+//                playerState = "VIDEO STARTED";
+//            }
+//        }
+//
+//        @Override
+//        public void onVideoEnded() {
+//
+//        }
+//
+//        @Override
+//        public void onError(YouTubePlayer.ErrorReason errorReason) {
+//
+//        }
+//    }
 }
 
 
