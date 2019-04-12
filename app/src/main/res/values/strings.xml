@@ -50,8 +50,8 @@
     <string name="date_gen_el">November 5, 2019</string>
 
    //bill of rights
-    <string name="hd_bill_of_rights"><b>New York State Voter\'s Bill of Rights</b></string>
     <string name="txt_bill_of_rights">
+        \n <big><b>New York State Voter\'s Bill of Rights</b></big>\n
         \n <b>As a registered voter, you have the right to:</b>\n
         \n <b>Vote:</b> The right to vote includes voting for candidates and questions on the ballot and having sufficient time to vote. \n
         \n <b>Have Your Votes Count:</b> Vote on a voting system that is in working condition and that will allow votes to be accurately cast. \n
