@@ -2,24 +2,23 @@ package com.pursuit.nycmenagerie.host;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 
-import com.pursuit.nycmenagerie.nav_drawer.CreatorFragment;
 import com.pursuit.nycmenagerie.OnFragmentInteraction;
 import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.civic_quotes.QuoteFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoFragment;
 import com.pursuit.nycmenagerie.civic_videos.VideoResponse;
+import com.pursuit.nycmenagerie.nav_drawer.CreatorFragment;
 import com.pursuit.nycmenagerie.nav_drawer.PollingLocationFragment;
 import com.pursuit.nycmenagerie.nav_drawer.PollworkerFragment;
 import com.pursuit.nycmenagerie.nav_drawer.UpcomingElectionFragment;
