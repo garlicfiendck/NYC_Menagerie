@@ -15,11 +15,12 @@ import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.tab_pollworker.PollworkerTabAdapter;
 import com.pursuit.nycmenagerie.tab_upcoming_election.DscUpElectionFragment;
 import com.pursuit.nycmenagerie.tab_upcoming_election.SaveTheDateFragment;
+import com.pursuit.nycmenagerie.tab_upcoming_election.UpElectionAdapter;
 
 
 public class UpcomingElectionFragment extends Fragment implements ViewPager.OnPageChangeListener {
 
-    private PollworkerTabAdapter elAdapter;
+    private UpElectionAdapter elAdapter;
     private TabLayout elTabLayout;
     private ViewPager elViewPager;
 
@@ -38,7 +39,7 @@ public class UpcomingElectionFragment extends Fragment implements ViewPager.OnPa
         elViewPager = view.findViewById(R.id.el_viewPager);
         elTabLayout = view.findViewById(R.id.el_tabLayout);
 
-        elAdapter = new PollworkerTabAdapter(getChildFragmentManager());
+        elAdapter = new UpElectionAdapter(getChildFragmentManager());
 
         elAdapter.addFragment(new DscUpElectionFragment(), "Upcoming Elections");
         elAdapter.addFragment(new SaveTheDateFragment(), "Save the Date");
