@@ -10,10 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chabbal.slidingdotsplash.SlidingSplashView;
 import com.pursuit.nycmenagerie.R;
 import com.pursuit.nycmenagerie.tab_pollworker.DscAPFragment;
-import com.pursuit.nycmenagerie.tab_pollworker.DscINTFragment;
 import com.pursuit.nycmenagerie.tab_pollworker.DscPWFragment;
 import com.pursuit.nycmenagerie.tab_pollworker.PollworkerTabAdapter;
 
@@ -43,7 +41,6 @@ public class PollworkerFragment extends Fragment implements ViewPager.OnPageChan
         pwAdapter = new PollworkerTabAdapter(getChildFragmentManager());
 
         pwAdapter.addFragment(new DscPWFragment(), "Pollworker");
-        pwAdapter.addFragment(new DscINTFragment(), "Interpreter");
         pwAdapter.addFragment(new DscAPFragment(), "Apply");
 
         pwViewPager.setAdapter(pwAdapter);

@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".nav_drawer.PollingLocationFragment"
-    android:background="#FFFFFF">
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@color/colorWhite">
 
     <ImageView
         android:id="@+id/logo_vote_nyc"
@@ -28,7 +30,7 @@
         android:gravity="center_horizontal"
         android:text="@string/txt_expectations"
         android:textColor="#000"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/btn_web_pollsite_locator"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,18 +38,17 @@
 
     <Button
         android:id="@+id/btn_web_pollsite_locator"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="80dp"
-        android:background="#190033"
+        android:layout_marginBottom="96dp"
+        android:background="@color/colorPrimary"
         android:text="Lookup Address"
         android:textColor="@color/colorWhite"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
-
 
 </android.support.constraint.ConstraintLayout>

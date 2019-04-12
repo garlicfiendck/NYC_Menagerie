@@ -12,10 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pursuit.nycmenagerie.R;
-import com.pursuit.nycmenagerie.tab_pollworker.DscAPFragment;
-import com.pursuit.nycmenagerie.tab_pollworker.DscINTFragment;
-import com.pursuit.nycmenagerie.tab_pollworker.DscPWFragment;
-import com.pursuit.nycmenagerie.tab_pollworker.PollworkerTabAdapter;
 import com.pursuit.nycmenagerie.tab_voter_status.CheckRegFragment;
 import com.pursuit.nycmenagerie.tab_voter_status.RegisterFragment;
 import com.pursuit.nycmenagerie.tab_voter_status.RegistrationTabAdapter;
