@@ -57,7 +57,6 @@ public class YoutubeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final Bundle ytArgs = getArguments();
-//        final MyPlayerStateChangeListener myPlayerStateChangeListener = new MyPlayerStateChangeListener(savedInstanceState);
 
         YouTubePlayerSupportFragment youTubePlayerSupportFragment = YouTubePlayerSupportFragment.newInstance();
         getChildFragmentManager()
@@ -71,7 +70,6 @@ public class YoutubeFragment extends Fragment {
                 if (!wasRestored) {
 
                     tubePlayer = youTubePlayer;
-//                    tubePlayer.setPlayerStateChangeListener(myPlayerStateChangeListener);
                     tubePlayer.loadVideo(ytArgs.getString(YOUTUBE_KEY));
                     tubePlayer.play();
                 }
@@ -102,51 +100,6 @@ public class YoutubeFragment extends Fragment {
         super.onDestroy();
     }
 
-    //
-//    private class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
-//
-//        private String playerState = "UNINITIALIZED";
-//        private Bundle savedInstanceState;
-//
-//        public MyPlayerStateChangeListener(Bundle savedInstanceState) {
-//            this.savedInstanceState = savedInstanceState;
-//
-//        }
-//
-//        @Override
-//        public void onLoading() {
-//            playerState = "LOADING";
-//        }
-//
-//        @Override
-//        public void onLoaded(String s) {
-//            String.format("LOADED %s", s);
-//        }
-//
-//        @Override
-//        public void onAdStarted() {
-//            playerState = "AD STARTING";
-//        }
-//
-//        @Override
-//        public void onVideoStarted() {
-//            if (savedInstanceState != null) {
-//                System.out.println("current time: " + savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
-//                tubePlayer.seekToMillis(savedInstanceState.getInt(String.valueOf(tubePlayer.getCurrentTimeMillis())));
-//                playerState = "VIDEO STARTED";
-//            }
-//        }
-//
-//        @Override
-//        public void onVideoEnded() {
-//
-//        }
-//
-//        @Override
-//        public void onError(YouTubePlayer.ErrorReason errorReason) {
-//
-//        }
-//    }
 }
 
 

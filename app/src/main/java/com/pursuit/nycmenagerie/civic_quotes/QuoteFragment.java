@@ -29,18 +29,11 @@ import retrofit2.Response;
 
 public class QuoteFragment extends Fragment {
 
-//    public static final String QUOTE_KEY = "Quote";
-//    public static final String AUTHOR_KEY = "Author";
     private static final String QUOTE_TAG = "Quote Tag";
     private static final String VIDEO_TAG = "Video Tag";
-//    private static final String IMAGE_TAG = "Image Tag";
-
-//    private String quote;
-//    private String author;
 
     private RecyclerView recyclerView;
     private QuoteAdapter adapter;
-//    private static long currentVisiblePosition;
 
     private List<QuoteResponse> quoteList = new ArrayList<>();
     private List<VideoResponse> videoList = new ArrayList<>();
@@ -49,10 +42,6 @@ public class QuoteFragment extends Fragment {
 
     public static QuoteFragment newInstance() {
         QuoteFragment quoteFragment = new QuoteFragment();
-//        Bundle quoteArgs = new Bundle();
-//        quoteArgs.putString(QUOTE_KEY, quote);
-//        quoteArgs.putString(AUTHOR_KEY, author);
-//        quoteFragment.setArguments(quoteArgs);
         return quoteFragment;
     }
 
@@ -69,10 +58,6 @@ public class QuoteFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            quote = getArguments().getString(QUOTE_KEY);
-//            author = getArguments().getString(AUTHOR_KEY);
-//        }
         quoteCallback();
         videoCallback();
     }
@@ -95,28 +80,7 @@ public class QuoteFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-//        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        } else {
-//            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        }
-
     }
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        currentVisiblePosition = 0;
-//        currentVisiblePosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        recyclerView.getLayoutManager().scrollToPosition((int) currentVisiblePosition);
-//        currentVisiblePosition = 0;
-//    }
-
     @Override
     public void onDetach() {
         super.onDetach();
