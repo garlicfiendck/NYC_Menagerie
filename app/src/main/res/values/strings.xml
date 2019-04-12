@@ -1,17 +1,21 @@
 <resources>
     <string name="app_name">NYC Menagerie</string>
-
+    //nav drawer
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    //bio
     <string name="bio_creator">Caroline hails from Flushing, and is a garlic fiend so she expects to live until she’s 101 as a spritely elderly lady. And in between, build some unforgettable codes - both insanely good and terribly bad.</string>
     <string name="name_creator">Caroline Kang</string>
     <string name="btn_linkedin">Say hello on linkedin</string>
     <string name="btn_github_repo">Check out ongoing projects on Github</string>
     <string name="linkedin_creator">https://www.linkedin.com/in/carolinehkang/</string>
     <string name="github_creator">https://github.com/garlicfiendck?tab=repositories</string>
+
+    //pollsite locator
     <string name="link_pollsite_locator">https://nyc.pollsitelocator.com/search</string>
     <string name="txt_expectations">Upon clicking the button, you will be prompted to enter your house #, street name, and zip code on the NYC Board of Elections Pollsite Locator page</string>
+
+    //pollworker
     <string name="pw_txt_1">Depending on your registration status and availability you may be assigned to work as an Inspector, Poll Clerk, Information Clerk or Accessibility Clerk.</string>
     <string name="pw_txt_2"><![CDATA[Inspector/Poll Clerk are generally responsible for the operations in the ED, including opening the polls, serving voters and closing the polls including accuracy of canvass. Inspectors must stay for completion of canvass and tally. Ensures that Affidavit Ballot Envelopes are completed correctly and signs each one. Responsible for the set-up & closing of the Ballot Marking Device and Scanner. Assists the voter as needed on this equipment]]></string>
     <string name="pw_txt_3">Information Clerk use the Street Finder and Poll Site List to direct voters to their correct ED/AD and poll site. May also be re-assigned to be an Inspector or Poll Clerk on Election Day, as necessary.</string>
@@ -19,6 +23,8 @@
     <string name="pw_int_text">The Interpreter assists non-English speaking voters by translating voting information given by the Inspector and answers voter questions. The Interpreter may also assist non-English and limited-English speaking voters in voting booths.</string>
     <string name="link_pw_ap_online">https://nyc.electiondayworker.com/r/rA_4yzXNYkmL7ahEXYi0dw</string>
     <string name="link_ap_pw_more_info">https://www.vote.nyc.ny.us/html/workers/positions.shtml</string>
+
+    //voter status
     <string name="chk_reg_question">Am I Registered to Vote?</string>
     <string name="link_chk_reg">https://voterlookup.elections.ny.gov/</string>
     <string name="txt_reg_2"><b><u>In-Person:</u></b> Register to vote in person at one of BOE offices.</string>
@@ -34,6 +40,12 @@
     <string name="txt_register_online">Register Online</string>
     <string name="txt_hd_register_to_vote">Register to Vote</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //upcoming elections
+    <string name="hd_upcoming_el">2019 Upcoming Elections</string>
+    <string name="sub_hd_sp_el"><u>Special Election for City Council</u></string>
+    <string name="date_sp_el">May 15, 2019</string>
+    <string name="sub_hd_pr_el"><u>Primary Election</u></string>
+    <string name="date_pr_el">June 25, 2019</string>
+    <string name="sub_hd_gen_el"><u>General Election</u></string>
+    <string name="date_gen_el">November 5, 2019</string>
 </resources>

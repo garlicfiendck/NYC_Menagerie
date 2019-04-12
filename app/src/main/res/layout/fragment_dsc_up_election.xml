@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/colorPrimary"
+    android:backgroundTint="#19073D"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".tab_upcoming_election.DscUpElectionFragment">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,11 +16,12 @@
         android:layout_marginTop="72dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="2019 Upcoming Elections"
-        android:textColor="#000"
+        android:layout_marginBottom="36dp"
+        android:text="@string/hd_upcoming_el"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        android:textSize="32sp"
-        android:layout_marginBottom="48dp"/>
+        android:textSize="28sp"
+       />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,8 +29,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="Special Election for City Council"
-        android:textColor="#000"
+        android:text="@string/sub_hd_sp_el"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:textSize="24sp" />
 
@@ -37,8 +40,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="May 15, 2019"
-        android:textColor="#000"
+        android:text="@string/date_sp_el"
+        android:textColor="@color/colorWhite"
         android:textSize="32sp" />
 
     <TextView
@@ -47,8 +50,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="Primary Election"
-        android:textColor="#000"
+        android:text="@string/sub_hd_pr_el"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:textSize="24sp" />
 
@@ -58,8 +61,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="June 25, 2019"
-        android:textColor="#000"
+        android:text="@string/date_pr_el"
+        android:textColor="@color/colorWhite"
         android:textSize="32sp" />
 
     <TextView
@@ -68,8 +71,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="General Election"
-        android:textColor="#000"
+        android:text="@string/sub_hd_gen_el"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:textSize="24sp" />
 
@@ -79,8 +82,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="November 5, 2019"
-        android:textColor="#000"
+        android:text="@string/date_gen_el"
+        android:textColor="@color/colorWhite"
         android:textSize="32sp" />
 
 </LinearLayout>
