@@ -29,7 +29,6 @@ public class VideoFragment extends Fragment {
 
     private String title;
     private String imageFile;
-    private String videoUrl;
 
     private TextView txt_title_video;
     private ImageView img_thumbnail_video;
@@ -65,7 +64,6 @@ public class VideoFragment extends Fragment {
         if(getArguments() != null){
             title = getArguments().getString(TITLE_KEY);
             imageFile = getArguments().getString(IMAGE_KEY);
-            videoUrl = getArguments().getString(VIDEO_KEY);
 
         }
     }
