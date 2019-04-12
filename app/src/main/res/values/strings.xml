@@ -48,4 +48,18 @@
     <string name="date_pr_el">June 25, 2019</string>
     <string name="sub_hd_gen_el"><u>General Election</u></string>
     <string name="date_gen_el">November 5, 2019</string>
+
+   //bill of rights
+    <string name="hd_bill_of_rights"><b>New York State Voter\'s Bill of Rights</b></string>
+    <string name="txt_bill_of_rights">
+        \n <b>As a registered voter, you have the right to:</b>\n
+        \n <b>Vote:</b> The right to vote includes voting for candidates and questions on the ballot and having sufficient time to vote. \n
+        \n <b>Have Your Votes Count:</b> Vote on a voting system that is in working condition and that will allow votes to be accurately cast. \n
+        \n <b>Secrecy In Voting:</b> Secrecy in voting will be preserved for all elections. \n
+        \n <b>Freedom In Voting:</b> Cast your vote, free from coercion or intimidation by elections officers or any other person. \n
+        \n <b>Permanent Registration:</b> Once registered to vote, you continue to remain qualified to vote from an address within your county or city. \n
+        \n <b>Accessible Elections:</b> Non-discriminatory equal access to the election system for all voters, including the elderly, disabled, alternative language minorities, military and overseas citizens, as required by Federal and State laws. \n
+        \n <b>Assistance In Voting:</b> You may request assistance to vote because of blindness, disability, or inability to read or write. Instruction In Voting: You can view a sample ballot in this polling place prior to voting, and before entering or approaching a privacy booth, scanner or ballot marking device, you may request help in how to mark and/or cast your ballot. \n
+        \n <b>Affidavit Voting:</b> Whenever your name does not appear in the poll ledger or the voter registration or enrollment list, or you do not provide identification when required, you will be offered an affidavit ballot. \n </string>
+
 </resources>
