@@ -23,6 +23,7 @@ import com.pursuit.nycmenagerie.nav_drawer.PollingLocationFragment;
 import com.pursuit.nycmenagerie.nav_drawer.PollworkerFragment;
 import com.pursuit.nycmenagerie.nav_drawer.UpcomingElectionFragment;
 import com.pursuit.nycmenagerie.nav_drawer.VoterStatusFragment;
+import com.pursuit.nycmenagerie.nav_drawer.VotersRightsFragment;
 import com.pursuit.nycmenagerie.youtube.YoutubeFragment;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteraction, NavigationView.OnNavigationItemSelectedListener {
@@ -116,6 +117,12 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
                         .commit();
                 break;
 
+            case R.id.nys_bill_of_right:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container_main, new VotersRightsFragment())
+                        .commit();
+                break;
             case R.id.about_me:
                 getSupportFragmentManager()
                         .beginTransaction()

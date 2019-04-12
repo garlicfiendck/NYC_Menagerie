@@ -19,7 +19,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'String', "ApiKey", NYCMenagerie_ApiKey
-            resValue 'string', "api_key",  NYCMenagerie_ApiKey
+            resValue 'string', "api_key", NYCMenagerie_ApiKey
         }
     }
 }

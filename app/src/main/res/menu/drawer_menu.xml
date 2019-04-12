@@ -22,6 +22,10 @@
     <item android:title="About">
         <menu>
             <item
+                android:id="@+id/nys_bill_of_right"
+                android:icon="@drawable/ic_nys_bor"
+                android:title="NYS Voter's Bill of Rights"/>
+            <item
                 android:id="@+id/about_me"
                 android:icon="@drawable/ic_about"
                 android:title="Creator"/>
