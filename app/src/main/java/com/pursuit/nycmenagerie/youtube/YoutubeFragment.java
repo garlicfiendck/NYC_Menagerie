@@ -49,26 +49,20 @@ public class YoutubeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_youtube, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.fragment_youtube, container, false);
 
         final Bundle ytArgs = getArguments();
 
         YouTubePlayerSupportFragment youTubePlayerSupportFragment = YouTubePlayerSupportFragment.newInstance();
         getChildFragmentManager()
                 .beginTransaction()
-                .add(R.id.frg_youtube, youTubePlayerSupportFragment)
+                .add(R.id.frame_frg_youtube, youTubePlayerSupportFragment)
                 .commit();
 
         youTubePlayerSupportFragment.initialize(YT_DEVELOPER_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
                 if (!wasRestored) {
-
                     tubePlayer = youTubePlayer;
                     tubePlayer.loadVideo(ytArgs.getString(YOUTUBE_KEY));
                     tubePlayer.play();
@@ -77,12 +71,14 @@ public class YoutubeFragment extends Fragment {
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+               //youtube error
                 String errorMessage = youTubeInitializationResult.toString();
                 Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_LONG).show();
                 Log.d("errorMessage:", errorMessage);
             }
         });
 
+        return rootView;
     }
 
     @Override
